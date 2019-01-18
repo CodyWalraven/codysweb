@@ -1,0 +1,59 @@
+version: 2 
+jobs: 
+  test:
+    working_directory: ~/repo 
+    docker: 
+      - image: circleci/node:11.6.0 
+    steps: 
+      - checkout
+      - restore_cache: 
+          key: dependency-cache-test-{{ checksum "package.json" }}      
+      - run:
+          name: Install-packages-with-yarn
+          command: yarn
+      - save_cache:
+          key: dependency-cache-test-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run: 
+          name: test
+          command: yarn test
+  build:
+    working_directory: ~/repo2 
+    docker: 
+      - image: circleci/node:11.6.0
+    steps:
+      - checkout
+      - restore_cache: 
+          key: dependency-cache-build-{{ checksum "package.json" }} 
+      - run:
+          name: Install-packages-with-yarn
+          command: yarn
+      - save_cache:
+          key: dependency-cache-build-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: update-and-install-python
+          command: sudo apt-get update && sudo apt-get install -y python
+      - run:
+          name: install-pip
+          command: sudo apt-get install python-pip
+      - run:
+          name: install-aws-cli
+          command: sudo pip install awscli --upgrade
+      - run:
+          name: deploy-to-s3-bucket-yay
+          command: yarn deploy
+workflows:
+  version: 2
+  test_and_or_build:
+    jobs:
+      - test
+      - build:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - test
