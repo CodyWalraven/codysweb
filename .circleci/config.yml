@@ -34,8 +34,11 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: install-pip
+          name: install-aws-cli
           command: sudo apt-get install awscli
+      - run:
+          name: enable-cloudfront-cli
+          command: aws configure set preview.cloudfront true
       - run:
           name: deploy-to-s3-bucket-yay
           command: yarn deploy
