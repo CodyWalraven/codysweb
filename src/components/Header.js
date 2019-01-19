@@ -1,17 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
-const StyledH1 = styled.h1 `
+const StyledH2 = styled.h2`
   overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 20px;
   margin: 0px;
+`
+
+const StyledDiv = styled.div`
+  padding: 20px 80px;
+  text-align: left;
+  background: ${props => props.theme.second};
+  color: white;
+  font-size: 30px;
+  box-shadow: 0px 0px 10px 5px ${props => props.theme.second};
 `
 
 class Header extends React.Component {
   render() {
     return (
-      <StyledH1>{this.props.title}</StyledH1>
+      <StyledDiv>
+        <StyledH2>{this.props.title}</StyledH2>
+      </StyledDiv>
     )
   }
 }

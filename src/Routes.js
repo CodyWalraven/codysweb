@@ -4,11 +4,9 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const AppRouter = () => (
   <BrowserRouter>
-    <div>
       <Switch>
         <Route exact path="/" component={Home} />
       </Switch>
-    </div>
   </BrowserRouter>
 )
 
