@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import Header from './components/Header'
+import AppRouter from './Routes'
 import 'normalize.css'
+import './styles/main.scss'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Header />
-      </div>
+      <AppRouter />
     );
   }
 }

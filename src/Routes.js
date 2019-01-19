@@ -1,12 +1,15 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from '../src/components/Home'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-class Routes extends React.Component {
-  render() {
-    return (
-      <Router>
-        <p> Temp tag</p>
-      </Router>
-    )
-  }
-}
+const AppRouter = () => (
+  <BrowserRouter>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </div>
+  </BrowserRouter>
+)
+
+export default AppRouter
