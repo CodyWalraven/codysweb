@@ -1,6 +1,5 @@
-* {
-  box-sizing: border-box;
-}
+@import '_home';
+
 
 html {
   font-size: 62.5%;
@@ -10,9 +9,22 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
   margin: 0;
-  padding: 0;
   height: 100%;
-  background: url(../assets/jellyfish.jpg);
+  padding: 0;
+  background-image: url(../assets/jellyfish.jpg);
+  min-height: 1500px;
+
+  /* Set background image to fixed (don't scroll along with the page) */
+  background-attachment: fixed;
+
+  /* Center the background image */
+  background-position: center;
+
+  /* Set the background image to no repeat */
+  background-repeat: no-repeat;
+
+  /* Scale the background image to be as large as possible */
+  background-size: cover;
 }
 
 

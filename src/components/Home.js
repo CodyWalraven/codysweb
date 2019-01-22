@@ -7,9 +7,22 @@ import TextSwap from './TextLoop.js'
 
 
 const StyledH1 = styled.h1`
+font-size: 46px;
+  position: relative;
+  top: 10rem;
+
   text-align: center;
-  color: white;
-  
+  color: white; 
+`
+
+
+
+const LowerDiv = styled.div`
+position: relative;
+top: 75vh;
+height: 800px;
+background-color: #090E2c;
+
 `
 
 class Home extends React.Component {
@@ -18,7 +31,11 @@ class Home extends React.Component {
     return (
       <div>
           <Header title="Portfolio" />
-          <StyledH1>Cody Walraven is building <TextSwap /> designs</StyledH1>
+          <div >
+            <StyledH1>Cody Walraven is building <TextSwap /> designs</StyledH1>
+          </div>
+          <LowerDiv />
+
       </div>
     )
   }
