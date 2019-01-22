@@ -6,7 +6,7 @@ import TextSwap from './TextLoop.js'
 
 
 const BackgroundDiv = styled.div`
-  background: linear-gradient(#e7717d, #c2cad0);
+  background-color: ${props => props.theme.second};
   height: 1000px;
 `
 
@@ -16,15 +16,14 @@ const StyledH1 = styled.h1`
   
 `
 
-
 class Home extends React.Component {
   state = {}
   render() {
     return (
-      <BackgroundDiv>
-        <Header title="Home" />
-        <StyledH1>Cody Walraven is building <TextSwap /> designs</StyledH1>
-      </BackgroundDiv>
+      <div>
+          <Header title="Portfolio" />
+          <StyledH1>Cody Walraven is building <TextSwap /> designs</StyledH1>
+      </div>
     )
   }
 }

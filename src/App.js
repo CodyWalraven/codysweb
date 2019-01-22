@@ -5,11 +5,11 @@ import "normalize.css"
 import "./styles/main.scss"
 
 const theme = {
-  main: "#E7717d",
-  second: "#c2cad0",
-  third: "#c2b9b0",
-  fourth: "#7e685a",
-  fifth: "#afd275",
+  main: "#2c3531",
+  second: "#116466",
+  third: "#d9b08c",
+  fourth: "#ffcb9a",
+  fifth: "#d1e8e2",
   smallSize: "1.2rem",
   mediumSize: "1.6rem",
   largeSize: "3.2rem",

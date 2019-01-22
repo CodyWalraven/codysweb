@@ -9,10 +9,10 @@ const StyledH2 = styled.h2`
 const StyledDiv = styled.div`
   padding: 20px 80px;
   text-align: left;
-  background: ${props => props.theme.second};
   color: white;
   font-size: 30px;
-  box-shadow: 0px 0px 10px 5px ${props => props.theme.second};
+  position: sticky;
+  top: 0;
 `
 
 class Header extends React.Component {
