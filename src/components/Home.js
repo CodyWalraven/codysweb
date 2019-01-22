@@ -1,14 +1,10 @@
 import React from "react"
 import Header from "./Header"
 import styled from "styled-components"
-import Background from './Background';
 import TextSwap from './TextLoop.js'
 
 
-const BackgroundDiv = styled.div`
-  background-color: ${props => props.theme.second};
-  height: 1000px;
-`
+
 
 const StyledH1 = styled.h1`
   text-align: center;

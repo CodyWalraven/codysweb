@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import AppRouter from "./Routes"
-import { ThemeProvider, createGlobalStyle } from "styled-components"
+import { ThemeProvider } from "styled-components"
 import "normalize.css"
 import "./styles/main.scss"
 
