@@ -10,16 +10,13 @@ const StyledH1 = styled.h1`
 font-size: 46px;
   position: relative;
   top: 10rem;
-
   text-align: center;
   color: white; 
 `
 
-
-
 const LowerDiv = styled.div`
 position: relative;
-top: 75vh;
+top: 80vh;
 height: 800px;
 background-color: #090E2c;
 
@@ -32,7 +29,7 @@ class Home extends React.Component {
       <div>
           <Header title="Portfolio" />
           <div >
-            <StyledH1>Cody Walraven is building <TextSwap /> designs</StyledH1>
+            <StyledH1>Cody Walraven is building <TextSwap /> websites.</StyledH1>
           </div>
           <LowerDiv />
 
