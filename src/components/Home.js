@@ -22,15 +22,21 @@ class Home extends React.Component {
             Cody Walraven is building <TextSwap /> websites.
           </StyledH1>
         </div>
+        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
+          <div className="cd-scrolling-bg__content">
+            <p>Game of Life</p>
+          </div>
+        </div>
+        <div className="cd-fixed-bg cd-fixed-bg--2">
+        </div>
 
-        <div className="cd-scrolling-bg cd-scrolling-bg--color-2">
+        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
           <div className="cd-scrolling-bg__content">
             <p>Projects</p>
           </div>
         </div>
 
-        <div className="cd-fixed-bg cd-fixed-bg--2">
-        </div>
+        <div className="cd-fixed-bg cd-fixed-bg--3" />
       </div>
     )
   }

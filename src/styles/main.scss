@@ -1,4 +1,3 @@
-@import '_home';
 @import '_background';
 
 
@@ -9,21 +8,8 @@ html {
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
-
-
-  /* Set background image to fixed (don't scroll along with the page) */
-  background-attachment: fixed;
-
-  /* Center the background image */
-  background-position: center;
-
-  /* Set the background image to no repeat */
-  background-repeat: no-repeat;
-
-  /* Scale the background image to be as large as possible */
-  background-size: cover;
+  background-color: rgb(28, 66, 117);
 }
-
 
 button {
   cursor: pointer;
