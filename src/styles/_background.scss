@@ -1,0 +1,21 @@
+.cd-fixed-bg {  
+  min-height: 100vh;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cd-fixed-bg.cd-fixed-bg--1 {
+  background-image: url("../assets/jellyfish.jpg");
+}
+
+.cd-fixed-bg.cd-fixed-bg--2 {
+  background-image: url("../assets/Optimized-jelly2.jpg");
+}
+
+.cd-scrolling-bg {
+  min-height: 100%;
+  height: 50vh;
+}
+
