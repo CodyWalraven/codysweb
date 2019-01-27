@@ -1,7 +1,6 @@
 import React from "react"
 import Header from "./../Header"
 import Game from "./Game"
-import styled from "styled-components"
 
 
 class GameHomeScreen extends React.Component {
