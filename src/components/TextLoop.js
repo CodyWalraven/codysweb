@@ -3,7 +3,7 @@ import TextLoop from "react-text-loop";
 import styled from 'styled-components';
 
 const StyledSpan = styled.span`
-  color: ${props => props.theme.third};
+  color: ${props => props.theme.fourth};
 `
 
 
