@@ -21,10 +21,6 @@ const StyledHeaderDiv = styled.div`
   z-index: 1;
 `
 
-const StyledSpan = styled.span`
-  color: white;
-  text-decoration: none;
-`
 
 const StyledNavLink = styled(NavLink)`
   color: white;
