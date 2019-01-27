@@ -1,26 +1,12 @@
 import React from "react"
+import Cell from './Cell'
 import "../../styles/game.scss"
 
-const CELL_SIZE = 20
+export const CELL_SIZE = 20
 const WIDTH = 400
 const HEIGHT = 600
 
-class Cell extends React.Component {
-  render() {
-    const { x, y } = this.props
-    return (
-      <div
-        className="Cell"
-        style={{
-          left: `${CELL_SIZE * x + 1}px`,
-          top: `${CELL_SIZE * y + 1}px`,
-          width: `${CELL_SIZE - 1}px`,
-          height: `${CELL_SIZE - 1}px`
-        }}
-      />
-    )
-  }
-}
+
 
 class Game extends React.Component {
   constructor() {
@@ -39,17 +25,19 @@ class Game extends React.Component {
   runGame = () => {
     this.setState({ isRunning: true })
     this.runIteration()
-    
   }
   stopGame = () => {
     this.setState({ isRunning: false })
+    if (this.timeoutHandler) {
+      window.clearTimeout(this.timeoutHandler)
+      this.timeoutHandler = null
+    }
   }
   handleIntervalChange = event => {
     this.setState({ interval: event.target.value })
   }
 
-  runIteration() {
-    console.log("running iteration")
+  runIteration = () => {
     let newBoard = this.makeEmptyBoard()
     for (let y = 0; y < this.rows; y++) {
       for (let x = 0; x < this.cols; x++) {
