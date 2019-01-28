@@ -183,11 +183,11 @@ class GameOfLife extends React.Component {
           />{" "}
           msec
           {this.state.isRunning ? (
-            <StyledButton className="button" onClick={this.stopGame}>
+            <StyledButton onClick={this.stopGame}>
               Stop
             </StyledButton>
           ) : (
-            <StyledButton className="button" onClick={this.runGame}>
+            <StyledButton onClick={this.runGame}>
               Run
             </StyledButton>
           )}
