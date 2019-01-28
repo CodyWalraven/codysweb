@@ -12,7 +12,7 @@ const StyledH1 = styled.h1`
   color: white;
 `
 
-const GameOfLifeHeader = styled.h1`
+const ProjectHeader = styled.h1`
   font-size: 36px;
   position: relative;
   top: 1rem;
@@ -21,7 +21,7 @@ const GameOfLifeHeader = styled.h1`
   text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 `
 
-const GameOfLifeDiv = styled.div`
+const ProjectDiv = styled.div`
   width: 70vw;
   height: 30vh;
   background-color: white;
@@ -58,26 +58,35 @@ class Home extends React.Component {
         </div>
         <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
           <div className="cd-scrolling-bg__content">
-            <GameOfLifeHeader>Game of Life</GameOfLifeHeader>
-            <GameOfLifeDiv>
+            <ProjectHeader>Game of Life</ProjectHeader>
+            <ProjectDiv>
               <p>
                 Conway's game of life is one of the earliest examples of
                 artificial life simulated by a computer, it is a representation
                 of cellular life governed by simple rules that result in complex
-                and organic shapes forming and evolving as time passes.{" "}
+                and organic shapes forming and evolving as time passes.
               </p>
               <br />
               <NavLink to="gamehomescreen">
                 <StyledButton>Game Of Life</StyledButton>
               </NavLink>
-            </GameOfLifeDiv>
+            </ProjectDiv>
           </div>
         </div>
         <div className="cd-fixed-bg cd-fixed-bg--2" />
 
         <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
           <div className="cd-scrolling-bg__content">
-            <p>Projects</p>
+          <ProjectHeader>Indecision App</ProjectHeader>
+            <ProjectDiv>
+              <p>
+                Indecision app allows you to enter many choices and have a computer choose from the available options, this project is from the wonderful udemy tutorial by Andrew Mead
+              </p>
+              <br />
+              <NavLink to="indecision">
+                <StyledButton>Indecision App</StyledButton>
+              </NavLink>
+            </ProjectDiv>
           </div>
         </div>
 

@@ -11,7 +11,18 @@ const StyledControlDiv = styled.div`
   margin: auto;
   text-align: center;
   padding: 20px;
-`
+`  
+const StyledButton = styled.button`
+  color: white;
+  background: #008cba !important;
+  padding: 5px 20px;
+  font-size: 16px;
+  margin: 5px;
+  border: none;
+  outline: none;
+  border-radius: 80px;
+  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.4) !important;
+`  
 
 
 class GameOfLife extends React.Component {
@@ -172,13 +183,13 @@ class GameOfLife extends React.Component {
           />{" "}
           msec
           {this.state.isRunning ? (
-            <button className="button" onClick={this.stopGame}>
+            <StyledButton className="button" onClick={this.stopGame}>
               Stop
-            </button>
+            </StyledButton>
           ) : (
-            <button className="button" onClick={this.runGame}>
+            <StyledButton className="button" onClick={this.runGame}>
               Run
-            </button>
+            </StyledButton>
           )}
         </StyledControlDiv>
       </div>

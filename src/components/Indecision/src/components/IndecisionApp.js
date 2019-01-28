@@ -1,7 +1,6 @@
 import React from "react"
 import AddOption from "./AddOption"
 //import Header from '../../../../components/Header'
-import {NavLink} from 'react-router-dom'
 import Header from "./Header"
 import Action from "./Action"
 import Options from "./Options"
