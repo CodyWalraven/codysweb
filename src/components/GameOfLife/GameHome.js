@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "./../Header"
-import Game from "./Game"
+import GameOfLife from "./GameOfLife"
 
 
 class GameHomeScreen extends React.Component {
@@ -9,7 +9,7 @@ class GameHomeScreen extends React.Component {
     return (
       <div>
         <Header title="Game Of Life" home={true} />
-        <Game />
+        <GameOfLife />
       </div>
     )
   }

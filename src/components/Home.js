@@ -36,7 +36,8 @@ const GameOfLifeDiv = styled.div`
 const StyledButton = styled.button`
   color: white;
   background: #008cba;
-  padding: 4px 12px;
+  padding: 20px 44px;
+  font-size: 20px;
   margin: 5px;
   border: none;
   outline: none;

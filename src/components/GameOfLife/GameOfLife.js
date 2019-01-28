@@ -1,14 +1,20 @@
 import React from "react"
 import Cell from './Cell'
 import "../../styles/game.scss"
+import styled from 'styled-components';
 
 export const CELL_SIZE = 20
 const WIDTH = 400
 const HEIGHT = 600
 
+const StyledControlDiv = styled.div`
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+`
 
 
-class Game extends React.Component {
+class GameOfLife extends React.Component {
   constructor() {
     super()
     this.rows = HEIGHT / CELL_SIZE
@@ -158,7 +164,7 @@ class Game extends React.Component {
             <Cell x={cell.x} y={cell.y} key={`${cell.x},${cell.y}`} />
           ))}
         </div>
-        <div className="controls">
+        <StyledControlDiv className="controls">
           Update every{" "}
           <input
             value={this.state.interval}
@@ -174,9 +180,9 @@ class Game extends React.Component {
               Run
             </button>
           )}
-        </div>
+        </StyledControlDiv>
       </div>
     )
   }
 }
-export default Game
+export default GameOfLife

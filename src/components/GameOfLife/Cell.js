@@ -1,5 +1,5 @@
 import React from 'react';
-import { CELL_SIZE } from './Game';
+import { CELL_SIZE } from './GameOfLife';
 
 class Cell extends React.Component {
   render() {
