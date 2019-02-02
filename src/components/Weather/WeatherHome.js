@@ -1,26 +1,33 @@
-import React from "react"
+import React from 'react'
 import axios from 'axios'
 
 export default class WeatherHome extends React.Component {
   state = {
-    weather: "20f"
+    temperature: '',
+    temperatureMax: '',
+    humidity: '',
+    rain: ''
   }
 
-  getWeather = () => {
-    
+  getWeather = (city, state) => {
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&units=imperial&APPID=6d9a703f94f2006001b7094d1241d1e6`
+      )
+      .then(response => {
+        console.log(response.data.main)
+        this.setState(() => ({
+          temperature: response.data.main.temp,
+          humidity: response.data.main.humidity
+        }))
+      })
   }
 
-  async componentDidMount() {
-    const response = await axios.get(
-      'https://api.openweathermap.org/data/2.5/weather?q=Frisco,usa&units=imperial&APPID=6d9a703f94f2006001b7094d1241d1e6'
-    )
-    console.log(response)
-    this.setState(() => ({
-      weather: JSON.stringify(response)
-    }))
+  componentDidMount() {
+    this.getWeather('frisco', 'usa')
   }
 
   render() {
-    return <p>The weather is {this.state.weather}</p>
+    return <p>The weather is {this.state.temperature}</p>
   }
 }
