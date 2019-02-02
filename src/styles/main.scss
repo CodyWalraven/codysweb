@@ -1,8 +1,12 @@
 @import '_background';
 
+* {
+  box-sizing: border-box;
+}
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
