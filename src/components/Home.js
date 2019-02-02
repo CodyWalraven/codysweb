@@ -24,7 +24,7 @@ const ProjectHeader = styled.h1`
 const ProjectDiv = styled.div`
   width: 70vw;
   height: 30vh;
-  background-color: white;
+  background-color: #e2e1e0;
   position: relative;
   margin: auto;
   padding: 10px;
@@ -91,6 +91,23 @@ class Home extends React.Component {
         </div>
 
         <div className="cd-fixed-bg cd-fixed-bg--3" />
+
+        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
+          <div className="cd-scrolling-bg__content">
+          <ProjectHeader>Weather</ProjectHeader>
+            <ProjectDiv>
+              <p>
+                A from scratch weather application using the dark sky api
+              </p>
+              <br />
+              <NavLink to="/weather">
+                <StyledButton>Weather App</StyledButton>
+              </NavLink>
+            </ProjectDiv>
+          </div>
+        </div>
+
+        <div className="cd-fixed-bg cd-fixed-bg--4" />
       </div>
     )
   }
