@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { createBrowserHistory } from 'history'
-import { NavLink } from "react-router-dom"
 const history = createBrowserHistory()
 
 const StyledH2 = styled.h2`
@@ -23,16 +22,6 @@ const StyledHeaderDiv = styled.div`
   z-index: 1;
 `
 
-
-const StyledNavLink = styled(NavLink)`
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 6px;
-  position: absolute;
-  top: 0;
-  left: 0;
-`
 const StyledButton = styled.button`
   background-color: rgba(0,0,0,0);
   color: white;
