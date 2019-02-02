@@ -47,7 +47,42 @@ export default class WeatherHome extends React.Component {
     temperature: '',
     temperatureMax: '',
     humidity: '',
-    rain: ''
+    rain: '',
+    city: '',
+    state: '',
+    zip: ''
+  }
+
+  geoLocateAndGetWeather = () => {
+    const url =
+      'https://api.ipgeolocation.io/ipgeo?apiKey=080c67862a9a4f53b31e1a2327d3a248'
+    fetch(url)
+      .then(response => response.json())
+      .then(responseJson => {
+        this.setState({
+          zip: responseJson.zipcode,
+          city: responseJson.city,
+          state: responseJson.state_prov
+        })
+      })
+      .then(() => {
+        this.getWeather(this.state.zip, 'us')
+      })
+  }
+
+  getWeather = (zip, country) => {
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&units=imperial&APPID=6d9a703f94f2006001b7094d1241d1e6`
+      )
+      .then(response => {
+        this.setState(() => ({
+          temperature: response.data.main.temp,
+          backupTemperature: response.data.main.temp,
+          temperatureMax: response.data.main.temp_max,
+          humidity: response.data.main.humidity
+        }))
+      })
   }
 
   handleColdTempChange = () => {
@@ -68,28 +103,12 @@ export default class WeatherHome extends React.Component {
     }))
   }
 
-  getWeather = (zip, country) => {
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&units=imperial&APPID=6d9a703f94f2006001b7094d1241d1e6`
-      )
-      .then(response => {
-        console.log(response.data.main)
-        this.setState(() => ({
-          temperature: response.data.main.temp,
-          backupTemperature: response.data.main.temp,
-          temperatureMax: response.data.main.temp_max,
-          humidity: response.data.main.humidity
-        }))
-      })
-  }
-
   goBack = () => {
     this.props.history.goBack()
   }
 
-  componentDidMount() {
-    this.getWeather('75071', 'us')
+  componentDidMount = () => {
+    this.geoLocateAndGetWeather()
   }
 
   render() {
@@ -98,6 +117,12 @@ export default class WeatherHome extends React.Component {
         <Header title="Weather" home={true} />
         {this.state.temperature > 50 ? (
           <WarmBackgroundDiv>
+            <p>
+              Showing weather for{' '}
+              <b>
+                {this.state.city}, {this.state.state}
+              </b>
+            </p>
             <p>
               Current temp: <b>{this.state.temperature}F</b>
             </p>
@@ -117,6 +142,12 @@ export default class WeatherHome extends React.Component {
           </WarmBackgroundDiv>
         ) : (
           <ColdBackgroundDiv>
+            <p>
+              Showing weather for{' '}
+              <b>
+                {this.state.city}, {this.state.state}
+              </b>
+            </p>
             <p>
               Current temp: <b>{this.state.temperature}F</b>
             </p>
