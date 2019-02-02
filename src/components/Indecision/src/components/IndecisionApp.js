@@ -6,11 +6,14 @@ import Action from "./Action"
 import Options from "./Options"
 import OptionModal from "./OptionModal"
 
+
 export default class IndecisionApp extends React.Component {
   state = {
     options: [],
     selectedOption: undefined
   }
+
+  
 
   handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }))

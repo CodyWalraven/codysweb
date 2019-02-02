@@ -1,5 +1,8 @@
 import React from 'react'
 import axios from 'axios'
+import { createBrowserHistory } from 'history'
+import Header from './../Header';
+
 
 export default class WeatherHome extends React.Component {
   state = {
@@ -23,11 +26,22 @@ export default class WeatherHome extends React.Component {
       })
   }
 
+  goBack = () => {
+    this.props.history.goBack() 
+  }
+
   componentDidMount() {
     this.getWeather('frisco', 'usa')
   }
 
   render() {
-    return <p>The weather is {this.state.temperature}</p>
+    return (
+      <div>
+        <Header title="Weather" home={true} />
+        <p>The weather is {this.state.temperature}F</p>
+        <button onClick={this.goBack}>Go back</button>
+      </div>
+    )
   }
 }
+

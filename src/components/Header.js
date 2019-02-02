@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
+import { createBrowserHistory } from 'history'
 import { NavLink } from "react-router-dom"
+const history = createBrowserHistory()
 
 const StyledH2 = styled.h2`
   overflow: hidden;
@@ -31,12 +33,28 @@ const StyledNavLink = styled(NavLink)`
   top: 0;
   left: 0;
 `
+const StyledButton = styled.button`
+  background-color: rgba(0,0,0,0);
+  color: white;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 6px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+`
 
 class Header extends React.Component {
+  goBack = () => {
+    history.goBack() 
+  }
+
   render() {
     return (
       <StyledHeaderDiv>
-        {this.props.home && <StyledNavLink to="/">Go Home</StyledNavLink>}
+        {this.props.home && <StyledButton onClick={this.goBack}>Go Home</StyledButton>}
         <StyledH2>{this.props.title}</StyledH2>
       </StyledHeaderDiv>
     )
