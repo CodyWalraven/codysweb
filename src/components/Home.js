@@ -1,8 +1,8 @@
-import React from "react"
-import Header from "./Header"
-import styled from "styled-components"
-import { NavLink } from "react-router-dom"
-import TextSwap from "./TextLoop.js"
+import React from 'react'
+import Header from './Header'
+import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
+import TextSwap from './TextLoop.js'
 
 const StyledH1 = styled.h1`
   font-size: 46px;
@@ -58,6 +58,39 @@ class Home extends React.Component {
         </div>
         <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
           <div className="cd-scrolling-bg__content">
+            <ProjectHeader>Weather</ProjectHeader>
+            <ProjectDiv>
+              <p>A from scratch weather application using automatic geo location and weather api's to display results without granting location access</p>
+              <br />
+              <NavLink to="/weather">
+                <StyledButton>Weather App</StyledButton>
+              </NavLink>
+            </ProjectDiv>
+          </div>
+        </div>
+
+        <div className="cd-fixed-bg cd-fixed-bg--2" />
+
+        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
+          <div className="cd-scrolling-bg__content">
+            <ProjectHeader>Indecision App</ProjectHeader>
+            <ProjectDiv>
+              <p>
+                Indecision app allows you to enter many choices and have a
+                computer choose from the available options, this project is from
+                the wonderful udemy tutorial by Andrew Mead
+              </p>
+              <br />
+              <NavLink to="indecision">
+                <StyledButton>Indecision App</StyledButton>
+              </NavLink>
+            </ProjectDiv>
+          </div>
+        </div>
+
+        <div className="cd-fixed-bg cd-fixed-bg--3" />
+        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
+          <div className="cd-scrolling-bg__content">
             <ProjectHeader>Game of Life</ProjectHeader>
             <ProjectDiv>
               <p>
@@ -69,39 +102,6 @@ class Home extends React.Component {
               <br />
               <NavLink to="gamehomescreen">
                 <StyledButton>Game Of Life</StyledButton>
-              </NavLink>
-            </ProjectDiv>
-          </div>
-        </div>
-        <div className="cd-fixed-bg cd-fixed-bg--2" />
-
-        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
-          <div className="cd-scrolling-bg__content">
-          <ProjectHeader>Indecision App</ProjectHeader>
-            <ProjectDiv>
-              <p>
-                Indecision app allows you to enter many choices and have a computer choose from the available options, this project is from the wonderful udemy tutorial by Andrew Mead
-              </p>
-              <br />
-              <NavLink to="indecision">
-                <StyledButton>Indecision App</StyledButton>
-              </NavLink>
-            </ProjectDiv>
-          </div>
-        </div>
-
-        <div className="cd-fixed-bg cd-fixed-bg--3" />
-
-        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
-          <div className="cd-scrolling-bg__content">
-          <ProjectHeader>Weather</ProjectHeader>
-            <ProjectDiv>
-              <p>
-                A from scratch weather application using the dark sky api
-              </p>
-              <br />
-              <NavLink to="/weather">
-                <StyledButton>Weather App</StyledButton>
               </NavLink>
             </ProjectDiv>
           </div>

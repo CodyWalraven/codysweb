@@ -43,7 +43,7 @@ const StyledResetButton = styled(StyledColdButton)`
 
 export default class WeatherHome extends React.Component {
   state = {
-    temperature: '',
+    temperature: '70',
     temperatureMax: '',
     humidity: '',
     rain: '',
@@ -73,11 +73,11 @@ export default class WeatherHome extends React.Component {
         'https://api.ipgeolocation.io/ipgeo?apiKey=080c67862a9a4f53b31e1a2327d3a248'
       )
       .then(response => {
-        this.setState({
+        this.setState(() => ({
           zip: response.data.zipcode,
           city: response.data.city,
           state: response.data.state_prov
-        })
+        }))
       })
       .then(() => {
         this.getWeather(this.state.zip, 'us')
@@ -85,25 +85,21 @@ export default class WeatherHome extends React.Component {
   }
 
   handleColdTempChange = () => {
-    console.log('making temp cold')
     this.setState(() => ({
       temperature: 30
     }))
   }
+
   handleHotTempChange = () => {
-    console.log('making temp cold')
     this.setState(() => ({
       temperature: 80
     }))
   }
+
   handleResetTemp = () => {
     this.setState(() => ({
       temperature: this.state.backupTemperature
     }))
-  }
-
-  goBack = () => {
-    this.props.history.goBack()
   }
 
   componentDidMount = () => {
