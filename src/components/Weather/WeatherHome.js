@@ -38,18 +38,12 @@ const StyledHotButton = styled(StyledColdButton)`
 
 const StyledResetButton = styled(StyledColdButton)`
   background: gray;
-  padding: 10px 22px;
+  padding: 8px 16px;
 `
 
 export default class WeatherHome extends React.Component {
   state = {
-    temperature: '70',
-    temperatureMax: '',
-    humidity: '',
-    rain: '',
-    city: '',
-    state: '',
-    zip: ''
+    hiddenTemperature: 70,
   }
 
   getWeather = (zip, country) => {
@@ -59,8 +53,8 @@ export default class WeatherHome extends React.Component {
       )
       .then(response => {
         this.setState(() => ({
+          hiddenTemperature: response.data.main.temp,
           temperature: response.data.main.temp,
-          backupTemperature: response.data.main.temp,
           temperatureMax: response.data.main.temp_max,
           humidity: response.data.main.humidity
         }))
@@ -69,9 +63,7 @@ export default class WeatherHome extends React.Component {
 
   geoLocateAndGetWeather = () => {
     axios
-      .get(
-        'https://api.ipgeolocation.io/ipgeo?apiKey=080c67862a9a4f53b31e1a2327d3a248'
-      )
+      .get('https://api.ipgeolocation.io/ipgeo?apiKey=080c67862a9a4f53b31e1a2327d3a248')
       .then(response => {
         this.setState(() => ({
           zip: response.data.zipcode,
@@ -86,19 +78,19 @@ export default class WeatherHome extends React.Component {
 
   handleColdTempChange = () => {
     this.setState(() => ({
-      temperature: 30
+      hiddenTemperature: 30
     }))
   }
 
   handleHotTempChange = () => {
     this.setState(() => ({
-      temperature: 80
+      hiddenTemperature: 80
     }))
   }
 
   handleResetTemp = () => {
     this.setState(() => ({
-      temperature: this.state.backupTemperature
+      hiddenTemperature: this.state.temperature
     }))
   }
 
@@ -110,10 +102,10 @@ export default class WeatherHome extends React.Component {
     return (
       <div style={{ overFlowX: 'hidden' }}>
         <Header title="Weather" home={true} />
-        {this.state.temperature > 50 ? (
+        {this.state.hiddenTemperature > 50 ? (
           <WarmBackgroundDiv>
             <p>
-              Showing weather for{' '}
+              Showing weather for:{' '}
               <b>
                 {this.state.city}, {this.state.state}
               </b>
@@ -131,14 +123,12 @@ export default class WeatherHome extends React.Component {
               Try cold version
             </StyledColdButton>
             <br />
-            <StyledResetButton onClick={this.handleResetTemp}>
-              Reset temps
-            </StyledResetButton>
+            <StyledResetButton onClick={this.handleResetTemp}>Reset background</StyledResetButton>
           </WarmBackgroundDiv>
         ) : (
           <ColdBackgroundDiv>
             <p>
-              Showing weather for{' '}
+              Showing weather for:{' '}
               <b>
                 {this.state.city}, {this.state.state}
               </b>
@@ -152,13 +142,9 @@ export default class WeatherHome extends React.Component {
             <p>
               Humidity: <b>{this.state.humidity}%</b>
             </p>
-            <StyledHotButton onClick={this.handleHotTempChange}>
-              Try hot version
-            </StyledHotButton>
+            <StyledHotButton onClick={this.handleHotTempChange}>Try hot version</StyledHotButton>
             <br />
-            <StyledResetButton onClick={this.handleResetTemp}>
-              Reset temps
-            </StyledResetButton>
+            <StyledResetButton onClick={this.handleResetTemp}>Reset background</StyledResetButton>
           </ColdBackgroundDiv>
         )}
       </div>
