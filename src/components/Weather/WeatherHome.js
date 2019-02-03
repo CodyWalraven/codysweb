@@ -6,7 +6,6 @@ import Header from './../Header'
 const ColdBackgroundDiv = styled.div`
   width: 100vw;
   height: 88vh;
-  border-radius: 20px;
   padding: 30px;
   background-color: #e2e1e0;
   background-image: url('https://images.unsplash.com/photo-1422020297037-97bd356cc312?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80');
@@ -53,23 +52,6 @@ export default class WeatherHome extends React.Component {
     zip: ''
   }
 
-  geoLocateAndGetWeather = () => {
-    const url =
-      'https://api.ipgeolocation.io/ipgeo?apiKey=080c67862a9a4f53b31e1a2327d3a248'
-    fetch(url)
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState({
-          zip: responseJson.zipcode,
-          city: responseJson.city,
-          state: responseJson.state_prov
-        })
-      })
-      .then(() => {
-        this.getWeather(this.state.zip, 'us')
-      })
-  }
-
   getWeather = (zip, country) => {
     axios
       .get(
@@ -82,6 +64,23 @@ export default class WeatherHome extends React.Component {
           temperatureMax: response.data.main.temp_max,
           humidity: response.data.main.humidity
         }))
+      })
+  }
+
+  geoLocateAndGetWeather = () => {
+    axios
+      .get(
+        'https://api.ipgeolocation.io/ipgeo?apiKey=080c67862a9a4f53b31e1a2327d3a248'
+      )
+      .then(response => {
+        this.setState({
+          zip: response.data.zipcode,
+          city: response.data.city,
+          state: response.data.state_prov
+        })
+      })
+      .then(() => {
+        this.getWeather(this.state.zip, 'us')
       })
   }
 
