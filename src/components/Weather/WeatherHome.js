@@ -95,6 +95,7 @@ export default class WeatherHome extends React.Component {
   }
 
   componentDidMount = () => {
+    window.scrollTo(0,0)
     this.geoLocateAndGetWeather()
   }
 

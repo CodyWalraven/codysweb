@@ -11,7 +11,9 @@ const StyledDiv = styled.div `
 `
 
 class IndecisionMain extends React.Component {
-  state = {  }
+  componentDidMount(){
+    window.scrollTo(0,0)
+  }
   render() {
     return (
       <StyledDiv>

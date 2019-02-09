@@ -4,7 +4,10 @@ import GameOfLife from "./GameOfLife"
 
 
 class GameHomeScreen extends React.Component {
-  state = {}
+
+  componentDidMount(){
+    window.scrollTo(0,0)
+  }
   render() {
     return (
       <div>
