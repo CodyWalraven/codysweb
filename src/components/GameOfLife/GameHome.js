@@ -8,7 +8,7 @@ class GameHomeScreen extends React.Component {
   render() {
     return (
       <div>
-        <Header title="Game Of Life" home={true} />
+        <Header title={window.innerWidth < 500 ? 'Life' : 'Game Of Life'} home={true} />
         <GameOfLife />
       </div>
     )

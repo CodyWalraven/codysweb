@@ -4,8 +4,12 @@ import "../../styles/game.scss"
 import styled from 'styled-components';
 
 export const CELL_SIZE = 20
-const WIDTH = 400
-const HEIGHT = 600
+let WIDTH = 400
+let HEIGHT = 600
+let windowWidth = window.innerWidth
+windowWidth < 500 ? WIDTH = 300 : WIDTH = 400
+windowWidth < 500 ? HEIGHT = 360 : HEIGHT = 600
+console.log(window.innerWidth)
 
 const StyledControlDiv = styled.div`
   margin: auto;
@@ -155,6 +159,20 @@ class GameOfLife extends React.Component {
     this.setState({ cells: this.makeCells() })
   }
 
+  saveBoardToLocalStorage = () => {
+    const stateToSave = JSON.stringify(this.state)
+    localStorage.setItem('state', stateToSave)
+    console.log(localStorage.getItem('state'))
+  }
+
+  loadBoardFromLocalStorage = () => {
+    this.setState(JSON.parse(localStorage.getItem('state')))
+  }
+
+  componentWillUnmount = () => {
+    this.stopGame()
+  }
+
   render() {
     const { cells } = this.state
     return (
@@ -191,6 +209,8 @@ class GameOfLife extends React.Component {
               Run
             </StyledButton>
           )}
+          <StyledButton onClick={this.saveBoardToLocalStorage}>Save Board</StyledButton>
+          <StyledButton onClick={this.loadBoardFromLocalStorage}>Load Board</StyledButton>
         </StyledControlDiv>
       </div>
     )

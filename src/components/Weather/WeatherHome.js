@@ -43,7 +43,7 @@ const StyledResetButton = styled(StyledColdButton)`
 
 export default class WeatherHome extends React.Component {
   state = {
-    hiddenTemperature: 70,
+    hiddenTemperature: 70
   }
 
   getWeather = (zip, country) => {
