@@ -8,8 +8,12 @@ import styled from 'styled-components'
 
 const StyledControlDiv = styled.div`
   margin: auto;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 400px;
   text-align: center;
   padding: 20px;
+  background-color: white;
 `
 const StyledButton = styled.button`
   color: white;
@@ -43,9 +47,12 @@ let WIDTH = 800
 let HEIGHT = 660
 let mobileDevice = false
 let windowWidth = window.innerWidth
-windowWidth < 500 ? (WIDTH = 300) : (WIDTH = 800)
-windowWidth < 500 ? (HEIGHT = 360) : (HEIGHT = 660)
-windowWidth < 500 ? (mobileDevice = true) : (mobileDevice = false)
+if (windowWidth < 700){
+  WIDTH = 300
+  HEIGHT = 360
+  mobileDevice = true
+}
+
 
 class GameOfLife extends React.Component {
   constructor() {
