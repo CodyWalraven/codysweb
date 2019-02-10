@@ -23,16 +23,25 @@ const ProjectHeader = styled.h1`
 `
 
 const ProjectDiv = styled.div`
-  width: 40vw;
-  height: 33vh;
+  width: 60vw;
+  height: 30vh;
   background-color: #e9f5fe;
   position: relative;
+  bottom: 20px;
   margin: auto;
+  margin-top: 40px;
   padding: 30px;
   border-radius: 5px;
   font-size: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   text-align: center;
+
+  @media only screen and (max-width: 800px) {
+    padding: 10px;
+    margin-top: 20px;
+    width: 90vw;
+    height: 60vh;
+  }
 `
 
 const NewStyledButton = styled.button`
@@ -92,8 +101,8 @@ const Home = () => (
         <ProjectDiv>
           <p>
             Conway's game of life is one of the earliest examples of artificial life simulated by a
-            computer, it is a representation of cellular life governed by simple rules that result
-            in complex and organic shapes forming and evolving as time passes. This implementation
+            computer, it is governed by simple rules that result
+            in complex and organic shapes evolving as time passes. This implementation
             has added the ability to load in some famous patterns and implements all new styling to
             the design.
           </p>

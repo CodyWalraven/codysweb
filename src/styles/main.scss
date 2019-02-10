@@ -12,6 +12,7 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 1.6rem; // background-color: rgb(28, 74, 117);
   background-color: var(--main-bg-color);
+  overflow-x: hidden;
   --main-bg-color: #40758e; 
 }
 

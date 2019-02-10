@@ -5,6 +5,12 @@ import Header from './../Header'
 import cold from '../../assets/cold.jpg'
 import warm from '../../assets/warm.jpg'
 
+const BackgroundDiv = styled.div`
+  overflow: none;
+  max-height: 88vh;
+  max-width: 100vw;
+`
+
 const ColdBackgroundDiv = styled.div`
   width: 100vw;
   height: 88vh;
@@ -14,7 +20,6 @@ const ColdBackgroundDiv = styled.div`
   background-size: 100vw 112vh;
   background-attachment: scroll;
   text-align: center;
-  margin: auto;
   font-size: 20px;
 `
 
@@ -24,12 +29,17 @@ const WarmBackgroundDiv = styled(ColdBackgroundDiv)`
 
 const WeatherInfoDiv = styled.div`
   width: 98vw;
-  height: 30vh;
-  padding: 30px;
-  padding-right: 50px;
+  height: 35vh;
+  position: relative;
+  right: 1rem;
+  padding: 10px;
+  margin-bottom: 10px;
+
   border-radius: 20px;
-  margin: 0 auto;
   font-size: 25px;
+  @media only screen and (max-width: 800px) {
+    right: 2rem;
+  }
 `
 
 const NewStyledHotButton = styled.button`
@@ -135,7 +145,7 @@ export default class WeatherHome extends React.Component {
 
   render() {
     return (
-      <div style={{ overFlowX: 'hidden' }}>
+      <BackgroundDiv>
         <Header title="Weather" home={true} />
         {this.state.hiddenTemperature > 50 ? (
           <WarmBackgroundDiv>
@@ -188,7 +198,7 @@ export default class WeatherHome extends React.Component {
             <StyledResetButton onClick={this.handleResetTemp}>Reset background</StyledResetButton>
           </ColdBackgroundDiv>
         )}
-      </div>
+      </BackgroundDiv>
     )
   }
 }

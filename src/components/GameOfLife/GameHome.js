@@ -8,6 +8,7 @@ const StyledDiv = styled.div`
   background-image: url(${mountains});
   background-size: cover;
   height: 100vh;
+  width: 100vw;
 `
 
 class GameHomeScreen extends React.Component {

@@ -13,9 +13,9 @@ const StyledControlDiv = styled.div`
   margin: auto;
   border-radius: 20px;
   margin-top: 20px;
-  width: 400px;
+  width: 300px;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   background-color: #adcbff;
 `
@@ -66,7 +66,7 @@ let HEIGHT = 660
 let mobileDevice = false
 if (window.innerWidth < 700){
   WIDTH = 300
-  HEIGHT = 360
+  HEIGHT = 340
   mobileDevice = true
 }
 
