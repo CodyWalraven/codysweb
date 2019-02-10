@@ -2,13 +2,15 @@ import React from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 import Header from './../Header'
+import cold from '../../assets/cold.jpg'
+import warm from '../../assets/warm.jpg'
 
 const ColdBackgroundDiv = styled.div`
   width: 100vw;
   height: 88vh;
   padding: 30px;
   background-color: #e2e1e0;
-  background-image: url('https://images.unsplash.com/photo-1422020297037-97bd356cc312?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1355&q=80');
+  background-image: url(${cold});
   background-size: 100vw 112vh;
   background-attachment: scroll;
   text-align: center;
@@ -17,7 +19,7 @@ const ColdBackgroundDiv = styled.div`
 `
 
 const WarmBackgroundDiv = styled(ColdBackgroundDiv)`
-  background-image: url('https://images.unsplash.com/photo-1421284621639-884f4129b61d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-image: url(${warm});
 `
 
 const WeatherInfoDiv = styled.div`
