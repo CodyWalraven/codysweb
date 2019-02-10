@@ -37,7 +37,7 @@ const WeatherInfoDiv = styled.div`
 
   border-radius: 20px;
   font-size: 25px;
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 600px) {
     right: 2rem;
   }
 `

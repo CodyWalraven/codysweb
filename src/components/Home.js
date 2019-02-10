@@ -37,11 +37,19 @@ const ProjectDiv = styled.div`
   text-align: center;
 
   @media only screen and (max-width: 800px) {
+    
+    width: 90vw;
+    height: 30vh;
+  }
+  
+  @media only screen and (max-width: 500px) {
     padding: 10px;
     margin-top: 20px;
     width: 90vw;
     height: 60vh;
   }
+
+  
 `
 
 const NewStyledButton = styled.button`
