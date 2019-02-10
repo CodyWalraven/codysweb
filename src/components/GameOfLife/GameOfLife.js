@@ -52,8 +52,7 @@ export const CELL_SIZE = 20
 let WIDTH = 800
 let HEIGHT = 660
 let mobileDevice = false
-let windowWidth = window.innerWidth
-if (windowWidth < 700){
+if (window.innerWidth < 700){
   WIDTH = 300
   HEIGHT = 360
   mobileDevice = true
