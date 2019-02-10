@@ -175,13 +175,10 @@ class GameOfLife extends React.Component {
     this.setState({ cells: this.makeCells() })
   }
 
-  saveBoardToLocalStorage = () => {
+  logBoard = () => {
     console.log(JSON.stringify(this.state.cells))
     console.log(JSON.stringify(this.board))
-    // localStorage.setItem('state', stateToSave)
-    // localStorage.setItem('board', board)
-    // console.log(localStorage.getItem('state'))
-    // console.log(localStorage.getItem('board'))
+    
   }
 
   loadBoard = (board, state) => {
@@ -223,7 +220,7 @@ class GameOfLife extends React.Component {
           ) : (
             <StyledButton onClick={this.runGame}>Run</StyledButton>
           )}
-          <StyledButton onClick={this.saveBoardToLocalStorage}>Save Board</StyledButton>
+          {/* <StyledButton onClick={this.logBoard}>Save Board</StyledButton> */}
         </StyledControlDiv>
         {!mobileDevice && (
           <LoadDiv>
