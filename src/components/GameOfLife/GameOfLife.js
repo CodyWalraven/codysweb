@@ -1,33 +1,49 @@
-import React from "react"
+import React from 'react'
 import Cell from './Cell'
-import "../../styles/game.scss"
-import styled from 'styled-components';
-
-export const CELL_SIZE = 20
-let WIDTH = 400
-let HEIGHT = 600
-let windowWidth = window.innerWidth
-windowWidth < 500 ? WIDTH = 300 : WIDTH = 400
-windowWidth < 500 ? HEIGHT = 360 : HEIGHT = 600
-console.log(window.innerWidth)
+import { quarterExploderBoard, quarterExploderState } from './quarterExploder'
+import {gliderBoard, gliderState} from './gliderGun'
+import '../../styles/game.scss'
+import styled from 'styled-components'
 
 const StyledControlDiv = styled.div`
   margin: auto;
   text-align: center;
   padding: 20px;
-`  
+`
 const StyledButton = styled.button`
   color: white;
   background: #008cba !important;
   padding: 5px 20px;
-  font-size: 16px;
+  font-size: 24px;
   margin: 5px;
   border: none;
   outline: none;
   border-radius: 80px;
   box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.4) !important;
-`  
+  z-index: 2;
+`
 
+const LoadDiv = styled.div`
+  width: 300px;
+  height: 600px;
+  position: absolute;
+  right: 6vw;
+  top: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+`
+
+export const CELL_SIZE = 20
+
+let WIDTH = 800
+let HEIGHT = 660
+let mobileDevice = false
+let windowWidth = window.innerWidth
+windowWidth < 500 ? (WIDTH = 300) : (WIDTH = 800)
+windowWidth < 500 ? (HEIGHT = 360) : (HEIGHT = 660)
+windowWidth < 500 ? (mobileDevice = true) : (mobileDevice = false)
 
 class GameOfLife extends React.Component {
   constructor() {
@@ -85,28 +101,13 @@ class GameOfLife extends React.Component {
 
   calculateNeighbors(board, x, y) {
     let neighbors = 0
-    const dirs = [
-      [-1, -1],
-      [-1, 0],
-      [-1, 1],
-      [0, 1],
-      [1, 1],
-      [1, 0],
-      [1, -1],
-      [0, -1]
-    ]
+    const dirs = [[-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]]
     for (let i = 0; i < dirs.length; i++) {
       const dir = dirs[i]
       let y1 = y + dir[0]
       let x1 = x + dir[1]
 
-      if (
-        x1 >= 0 &&
-        x1 < this.cols &&
-        y1 >= 0 &&
-        y1 < this.rows &&
-        board[y1][x1]
-      ) {
+      if (x1 >= 0 && x1 < this.cols && y1 >= 0 && y1 < this.rows && board[y1][x1]) {
         neighbors++
       }
     }
@@ -160,13 +161,19 @@ class GameOfLife extends React.Component {
   }
 
   saveBoardToLocalStorage = () => {
-    const stateToSave = JSON.stringify(this.state)
-    localStorage.setItem('state', stateToSave)
-    console.log(localStorage.getItem('state'))
+    console.log(JSON.stringify(this.state.cells))
+    console.log(JSON.stringify(this.board))
+    // localStorage.setItem('state', stateToSave)
+    // localStorage.setItem('board', board)
+    // console.log(localStorage.getItem('state'))
+    // console.log(localStorage.getItem('board'))
   }
 
-  loadBoardFromLocalStorage = () => {
-    this.setState(JSON.parse(localStorage.getItem('state')))
+  loadBoard = (board, state) => {
+    this.board = board
+    this.setState(() => ({
+      cells: state
+    }))
   }
 
   componentWillUnmount = () => {
@@ -194,24 +201,29 @@ class GameOfLife extends React.Component {
           ))}
         </div>
         <StyledControlDiv className="controls">
-          Update every{" "}
-          <input
-            value={this.state.interval}
-            onChange={this.handleIntervalChange}
-          />{" "}
+          Update every <input value={this.state.interval} onChange={this.handleIntervalChange} />{' '}
           msec
           {this.state.isRunning ? (
-            <StyledButton onClick={this.stopGame}>
-              Stop
-            </StyledButton>
+            <StyledButton onClick={this.stopGame}>Stop</StyledButton>
           ) : (
-            <StyledButton onClick={this.runGame}>
-              Run
-            </StyledButton>
+            <StyledButton onClick={this.runGame}>Run</StyledButton>
           )}
           <StyledButton onClick={this.saveBoardToLocalStorage}>Save Board</StyledButton>
-          <StyledButton onClick={this.loadBoardFromLocalStorage}>Load Board</StyledButton>
         </StyledControlDiv>
+        {!mobileDevice && (
+          <LoadDiv>
+            <StyledButton
+              onClick={() => this.loadBoard(quarterExploderBoard, quarterExploderState)}
+            >
+              Load Quarter Exploder
+            </StyledButton>
+            <StyledButton
+              onClick={() => this.loadBoard(gliderBoard, gliderState)}
+            >
+              GliderGun
+            </StyledButton>
+          </LoadDiv>
+        )}
       </div>
     )
   }
