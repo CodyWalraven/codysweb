@@ -1,4 +1,4 @@
-.cd-fixed-bg {  
+.cd-fixed-bg {
   min-height: 100vh;
   background-size: cover;
   background-attachment: fixed;
@@ -8,7 +8,7 @@
 }
 
 @supports (-webkit-overflow-scrolling: touch) {
-  .cd-fixed-bg {  
+  .cd-fixed-bg {
     min-height: 100vh;
     background-size: cover;
     background-attachment: scroll;
@@ -24,35 +24,27 @@ body {
 }
 
 .cd-fixed-bg.cd-fixed-bg--1 {
-  background-image: url("../assets/bike-small.jpg");
+  background-image: url('../assets/bike-small.jpg');
 }
 
 .cd-fixed-bg.cd-fixed-bg--2 {
-  background-image: url("../assets/blue-flower.jpg");
+  background-image: url('../assets/blue-flower.jpg');
 }
-
 
 .cd-fixed-bg.cd-fixed-bg--3 {
-  background-image: url("../assets/jelly2.jpg");
-}
-.cd-fixed-bg.cd-fixed-bg--4 {
-  background-image: url("../assets/sky-of-stars.jpg");
+  background-image: url('../assets/jelly2.jpg');
 }
 
+.cd-fixed-bg.cd-fixed-bg--4 {
+  background-image: url('../assets/sky-of-stars.jpg');
+}
 
 .cd-scrolling-bg {
-  min-height: 100%;
   min-height: 50vh;
 }
 
 .cd-scrolling-bg--color-1 {
-  background-color: rgb(28, 74, 117);
-}
-
-.cd-scrolling-bg--color-2 {
-  background-color: green;
-
-}
-.cd-scrolling-bg--color-3 {
-
+  background-color: var(--main-bg-color);
+  background-image: url('http://www.alterenterprise.com/wp-content/uploads/2015/02/background_swirl1.png');
+  background-repeat: repeat-x;
 }

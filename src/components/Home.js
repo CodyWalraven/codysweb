@@ -13,7 +13,8 @@ const StyledH1 = styled.h1`
 `
 
 const ProjectHeader = styled.h1`
-  font-size: 36px;
+  font-size: 45px;
+  font-weight: bold;
   position: relative;
   top: 1rem;
   text-align: center;
@@ -22,27 +23,42 @@ const ProjectHeader = styled.h1`
 `
 
 const ProjectDiv = styled.div`
-  width: 70vw;
-  height: 30vh;
-  background-color: #e2e1e0;
+  width: 40vw;
+  height: 33vh;
+  background-color: #e9f5fe;
   position: relative;
   margin: auto;
-  padding: 10px;
+  padding: 30px;
   border-radius: 5px;
+  font-size: 20px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   text-align: center;
 `
 
-const StyledButton = styled.button`
+
+
+const NewStyledButton = styled.button`
   color: white;
-  background: #008cba;
+  background: #ff9684;
   padding: 20px 44px;
-  font-size: 20px;
+  font-size: 24px;
   margin: 5px;
   border: none;
   outline: none;
-  border-radius: 80px;
-  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  z-index: 2;
+
+  &:active{
+    background: #ffb4a8;
+  }
+
+  &:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: scaleY(1.01);
+    transform: scaleX(1.01);
+  }
 `
 
 class Home extends React.Component {
@@ -60,10 +76,10 @@ class Home extends React.Component {
           <div className="cd-scrolling-bg__content">
             <ProjectHeader>Weather</ProjectHeader>
             <ProjectDiv>
-              <p>A from scratch weather application using automatic geo location and weather api's to display results without granting location access</p>
+              <p>A from scratch weather application using automatic geo location and weather api's to display results without granting location access. It also has a dynamic background changing based on current temperature.</p>
               <br />
               <NavLink to="/weather">
-                <StyledButton>Weather App</StyledButton>
+                <NewStyledButton>Weather App</NewStyledButton>
               </NavLink>
             </ProjectDiv>
           </div>
@@ -79,11 +95,11 @@ class Home extends React.Component {
                 Conway's game of life is one of the earliest examples of
                 artificial life simulated by a computer, it is a representation
                 of cellular life governed by simple rules that result in complex
-                and organic shapes forming and evolving as time passes.
+                and organic shapes forming and evolving as time passes. This implementation has added the ability to load in some famous patterns and implements all new styling to the design.
               </p>
               <br />
               <NavLink to="gamehomescreen">
-                <StyledButton>Game Of Life</StyledButton>
+                <NewStyledButton>Game Of Life</NewStyledButton>
               </NavLink>
             </ProjectDiv>
             
@@ -97,13 +113,12 @@ class Home extends React.Component {
             <ProjectDiv>
               
               <p>
-                Indecision app allows you to enter many choices and have a
-                computer choose from the available options, this project is from
-                the wonderful udemy tutorial by Andrew Mead
+                The indecision app is perfect for those who are unable to decide on anything, it allows you to enter multiple choices and have a computer select one for you. This project is one I built following the
+                the wonderful react tutorial by Andrew Mead.
               </p>
               <br />
               <NavLink to="indecision">
-                <StyledButton>Indecision App</StyledButton>
+                <NewStyledButton>Indecision App</NewStyledButton>
               </NavLink>
             </ProjectDiv>
           </div>

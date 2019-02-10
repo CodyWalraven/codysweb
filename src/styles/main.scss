@@ -1,5 +1,4 @@
 @import '_background';
-
 * {
   box-sizing: border-box;
 }
@@ -11,9 +10,9 @@ html {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
-  //background-color: #116466;
-  background-color: rgb(28, 74, 117);
+  font-size: 1.6rem; // background-color: rgb(28, 74, 117);
+  background-color: var(--main-bg-color);
+  --main-bg-color: #40758e; 
 }
 
 button {

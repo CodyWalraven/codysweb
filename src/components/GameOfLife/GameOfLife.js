@@ -238,7 +238,7 @@ class GameOfLife extends React.Component {
           <LoadDiv>
             
             <StyledButton onClick={() => this.loadBoard(gliderBoard, gliderState)}>
-              Load GliderGun
+              Load Glider Gun
             </StyledButton>
             <StyledButton onClick={() => this.loadBoard(pentaBoard, pentaState)}>
               Load Pentadecathlon
