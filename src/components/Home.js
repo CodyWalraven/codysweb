@@ -29,7 +29,7 @@ const ProjectDiv = styled.div`
   margin: auto;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   text-align: center;
 `
 

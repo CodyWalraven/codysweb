@@ -1,6 +1,7 @@
 import React from 'react'
 import Cell from './Cell'
 import styled from 'styled-components'
+import {emptyBoard, emptyState} from './patterns/empty'
 import { gliderBoard, gliderState } from './patterns/gliderGun'
 import { pentaBoard, pentaState } from './patterns/penta'
 import {growthBoard, growthState} from './patterns/growth'
@@ -15,6 +16,7 @@ const StyledControlDiv = styled.div`
   width: 400px;
   text-align: center;
   padding: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   background-color: #adcbff;
 `
 const StyledButton = styled.button`
@@ -26,24 +28,34 @@ const StyledButton = styled.button`
   border: none;
   outline: none;
   border-radius: 13px;
-  box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   z-index: 2;
 
   &:active{
     background: #ffb4a8;
   }
+
+  &:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: scaleY(1.01);
+    transform: scaleX(1.01);
+  }
 `
 
 const LoadDiv = styled.div`
   width: 300px;
-  height: 600px;
+  height: 300px;
   position: absolute;
   right: 8vw;
-  top: 15vh;
+  top: 30vh;
   display: flex;
+  background-color: #adcbff;
+  border-radius: 20px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   z-index: 0;
 `
 
@@ -220,6 +232,7 @@ class GameOfLife extends React.Component {
             <StyledButton onClick={this.runGame}>Run</StyledButton>
           )}
           {/* <StyledButton onClick={this.logBoard}>Save Board</StyledButton> */}
+          <StyledButton onClick={() => this.loadBoard(emptyBoard, emptyState)}>Clear</StyledButton>
         </StyledControlDiv>
         {!mobileDevice && (
           <LoadDiv>
