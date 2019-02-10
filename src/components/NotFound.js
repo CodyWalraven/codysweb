@@ -10,6 +10,7 @@ font-size: 80px;
 
 `
 
+
 const StyledDiv = styled.div`
   text-align: center;
 `
