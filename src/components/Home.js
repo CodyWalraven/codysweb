@@ -31,11 +31,9 @@ const ProjectDiv = styled.div`
   padding: 30px;
   border-radius: 5px;
   font-size: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   text-align: center;
 `
-
-
 
 const NewStyledButton = styled.button`
   color: white;
@@ -46,88 +44,87 @@ const NewStyledButton = styled.button`
   border: none;
   outline: none;
   border-radius: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 2;
 
-  &:active{
+  &:active {
     background: #ffb4a8;
   }
 
   &:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  transform: scaleY(1.01);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transform: scaleY(1.01);
     transform: scaleX(1.01);
   }
 `
 
-class Home extends React.Component {
-  state = {}
-  render() {
-    return (
-      <div>
-        <div className="cd-fixed-bg cd-fixed-bg--1">
-          <Header title="Portfolio" />
-          <StyledH1>
-            Cody Walraven is building <TextSwap /> websites.
-          </StyledH1>
-        </div>
-        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
-          <div className="cd-scrolling-bg__content">
-            <ProjectHeader>Weather</ProjectHeader>
-            <ProjectDiv>
-              <p>A from scratch weather application using automatic geo location and weather api's to display results without granting location access. It also has a dynamic background changing based on current temperature.</p>
-              <br />
-              <NavLink to="/weather">
-                <NewStyledButton>Weather App</NewStyledButton>
-              </NavLink>
-            </ProjectDiv>
-          </div>
-        </div>
-
-        <div className="cd-fixed-bg cd-fixed-bg--2" />
-
-        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
-          <div className="cd-scrolling-bg__content">
-          <ProjectHeader>Game of Life</ProjectHeader>
-            <ProjectDiv>
-              <p>
-                Conway's game of life is one of the earliest examples of
-                artificial life simulated by a computer, it is a representation
-                of cellular life governed by simple rules that result in complex
-                and organic shapes forming and evolving as time passes. This implementation has added the ability to load in some famous patterns and implements all new styling to the design.
-              </p>
-              <br />
-              <NavLink to="gamehomescreen">
-                <NewStyledButton>Game Of Life</NewStyledButton>
-              </NavLink>
-            </ProjectDiv>
-            
-          </div>
-        </div>
-
-        <div className="cd-fixed-bg cd-fixed-bg--3" />
-        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
-          <div className="cd-scrolling-bg__content">
-          <ProjectHeader>Indecision App</ProjectHeader>
-            <ProjectDiv>
-              
-              <p>
-                The indecision app is perfect for those who are unable to decide on anything, it allows you to enter multiple choices and have a computer select one for you. This project is one I built following the
-                the wonderful react tutorial by Andrew Mead.
-              </p>
-              <br />
-              <NavLink to="indecision">
-                <NewStyledButton>Indecision App</NewStyledButton>
-              </NavLink>
-            </ProjectDiv>
-          </div>
-        </div>
-
-        <div className="cd-fixed-bg cd-fixed-bg--4" />
+const Home = () => (
+  <div>
+    <div className="cd-fixed-bg cd-fixed-bg--1">
+      <Header title="Portfolio" />
+      <StyledH1>
+        Cody Walraven is building <TextSwap /> websites.
+      </StyledH1>
+    </div>
+    <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
+      <div className="cd-scrolling-bg__content">
+        <ProjectHeader>Weather</ProjectHeader>
+        <ProjectDiv>
+          <p>
+            A from scratch weather application using automatic geo location and weather api's to
+            display results without granting location access. It also has a dynamic background
+            changing based on current temperature.
+          </p>
+          <br />
+          <NavLink to="/weather">
+            <NewStyledButton>Weather App</NewStyledButton>
+          </NavLink>
+        </ProjectDiv>
       </div>
-    )
-  }
-}
+    </div>
+
+    <div className="cd-fixed-bg cd-fixed-bg--2" />
+
+    <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
+      <div className="cd-scrolling-bg__content">
+        <ProjectHeader>Game of Life</ProjectHeader>
+        <ProjectDiv>
+          <p>
+            Conway's game of life is one of the earliest examples of artificial life simulated by a
+            computer, it is a representation of cellular life governed by simple rules that result
+            in complex and organic shapes forming and evolving as time passes. This implementation
+            has added the ability to load in some famous patterns and implements all new styling to
+            the design.
+          </p>
+          <br />
+          <NavLink to="gamehomescreen">
+            <NewStyledButton>Game Of Life</NewStyledButton>
+          </NavLink>
+        </ProjectDiv>
+      </div>
+    </div>
+
+    <div className="cd-fixed-bg cd-fixed-bg--3" />
+    <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
+      <div className="cd-scrolling-bg__content">
+        <ProjectHeader>Indecision App</ProjectHeader>
+        <ProjectDiv>
+          <p>
+            The indecision app is perfect for those who are unable to decide on anything, it allows
+            you to enter multiple choices and have a computer select one for you. This project is
+            one I built following the the wonderful react tutorial by Andrew Mead.
+          </p>
+          <br />
+          <NavLink to="indecision">
+            <NewStyledButton>Indecision App</NewStyledButton>
+          </NavLink>
+        </ProjectDiv>
+      </div>
+    </div>
+
+    <div className="cd-fixed-bg cd-fixed-bg--4" />
+  </div>
+)
 
 export default Home
