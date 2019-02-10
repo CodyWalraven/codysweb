@@ -13,17 +13,18 @@ const StyledControlDiv = styled.div`
   width: 400px;
   text-align: center;
   padding: 20px;
-  background-color: white;
+  background-color: #adcbff;
 `
 const StyledButton = styled.button`
   color: white;
-  background: #008cba !important;
+  background: #ffb584;
+  background: #ff9684;
   padding: 5px 20px;
   font-size: 24px;
   margin: 5px;
   border: none;
   outline: none;
-  border-radius: 80px;
+  border-radius: 13px;
   box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.4) !important;
   z-index: 2;
 `
