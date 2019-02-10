@@ -19,7 +19,6 @@ const StyledControlDiv = styled.div`
 `
 const StyledButton = styled.button`
   color: white;
-  background: #ffb584;
   background: #ff9684;
   padding: 5px 20px;
   font-size: 24px;
@@ -29,6 +28,10 @@ const StyledButton = styled.button`
   border-radius: 13px;
   box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.4) !important;
   z-index: 2;
+
+  &:active{
+    background: #ffb4a8;
+  }
 `
 
 const LoadDiv = styled.div`
