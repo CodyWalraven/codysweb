@@ -1,10 +1,12 @@
 import React from 'react'
 import Cell from './Cell'
+import styled from 'styled-components'
 import { gliderBoard, gliderState } from './patterns/gliderGun'
 import { pentaBoard, pentaState } from './patterns/penta'
 import {growthBoard, growthState} from './patterns/growth'
+import {fancyBlinkerBoard, fancyBlinkerState} from './patterns/fancyBlinker'
 import '../../styles/game.scss'
-import styled from 'styled-components'
+
 
 const StyledControlDiv = styled.div`
   margin: auto;
@@ -218,7 +220,7 @@ class GameOfLife extends React.Component {
           ) : (
             <StyledButton onClick={this.runGame}>Run</StyledButton>
           )}
-          {/* <StyledButton onClick={this.saveBoardToLocalStorage}>Save Board</StyledButton> */}
+          <StyledButton onClick={this.saveBoardToLocalStorage}>Save Board</StyledButton>
         </StyledControlDiv>
         {!mobileDevice && (
           <LoadDiv>
@@ -231,6 +233,9 @@ class GameOfLife extends React.Component {
             </StyledButton>
             <StyledButton onClick={() => this.loadBoard(growthBoard, growthState)}>
               Load Grow Machine
+            </StyledButton>
+            <StyledButton onClick={() => this.loadBoard(fancyBlinkerBoard, fancyBlinkerState)}>
+              Load Fancy Blinker
             </StyledButton>
           </LoadDiv>
         )}
