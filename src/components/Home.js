@@ -73,25 +73,7 @@ class Home extends React.Component {
 
         <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
           <div className="cd-scrolling-bg__content">
-            <ProjectHeader>Indecision App</ProjectHeader>
-            <ProjectDiv>
-              <p>
-                Indecision app allows you to enter many choices and have a
-                computer choose from the available options, this project is from
-                the wonderful udemy tutorial by Andrew Mead
-              </p>
-              <br />
-              <NavLink to="indecision">
-                <StyledButton>Indecision App</StyledButton>
-              </NavLink>
-            </ProjectDiv>
-          </div>
-        </div>
-
-        <div className="cd-fixed-bg cd-fixed-bg--3" />
-        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
-          <div className="cd-scrolling-bg__content">
-            <ProjectHeader>Game of Life</ProjectHeader>
+          <ProjectHeader>Game of Life</ProjectHeader>
             <ProjectDiv>
               <p>
                 Conway's game of life is one of the earliest examples of
@@ -102,6 +84,26 @@ class Home extends React.Component {
               <br />
               <NavLink to="gamehomescreen">
                 <StyledButton>Game Of Life</StyledButton>
+              </NavLink>
+            </ProjectDiv>
+            
+          </div>
+        </div>
+
+        <div className="cd-fixed-bg cd-fixed-bg--3" />
+        <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
+          <div className="cd-scrolling-bg__content">
+          <ProjectHeader>Indecision App</ProjectHeader>
+            <ProjectDiv>
+              
+              <p>
+                Indecision app allows you to enter many choices and have a
+                computer choose from the available options, this project is from
+                the wonderful udemy tutorial by Andrew Mead
+              </p>
+              <br />
+              <NavLink to="indecision">
+                <StyledButton>Indecision App</StyledButton>
               </NavLink>
             </ProjectDiv>
           </div>

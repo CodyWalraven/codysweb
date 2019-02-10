@@ -1,7 +1,8 @@
 import React from 'react'
 import Cell from './Cell'
-import { quarterExploderBoard, quarterExploderState } from './quarterExploder'
-import {gliderBoard, gliderState} from './gliderGun'
+import { gliderBoard, gliderState } from './patterns/gliderGun'
+import { pentaBoard, pentaState } from './patterns/penta'
+import {growthBoard, growthState} from './patterns/growth'
 import '../../styles/game.scss'
 import styled from 'styled-components'
 
@@ -27,11 +28,12 @@ const LoadDiv = styled.div`
   width: 300px;
   height: 600px;
   position: absolute;
-  right: 6vw;
+  right: 8vw;
   top: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   z-index: 0;
 `
 
@@ -208,19 +210,19 @@ class GameOfLife extends React.Component {
           ) : (
             <StyledButton onClick={this.runGame}>Run</StyledButton>
           )}
-          <StyledButton onClick={this.saveBoardToLocalStorage}>Save Board</StyledButton>
+          {/* <StyledButton onClick={this.saveBoardToLocalStorage}>Save Board</StyledButton> */}
         </StyledControlDiv>
         {!mobileDevice && (
           <LoadDiv>
-            <StyledButton
-              onClick={() => this.loadBoard(quarterExploderBoard, quarterExploderState)}
-            >
-              Load Quarter Exploder
+            
+            <StyledButton onClick={() => this.loadBoard(gliderBoard, gliderState)}>
+              Load GliderGun
             </StyledButton>
-            <StyledButton
-              onClick={() => this.loadBoard(gliderBoard, gliderState)}
-            >
-              GliderGun
+            <StyledButton onClick={() => this.loadBoard(pentaBoard, pentaState)}>
+              Load Pentadecathlon
+            </StyledButton>
+            <StyledButton onClick={() => this.loadBoard(growthBoard, growthState)}>
+              Load Grow Machine
             </StyledButton>
           </LoadDiv>
         )}
