@@ -107,7 +107,7 @@ export default class WeatherHome extends React.Component {
 
   geoLocateThenGetWeather = () => {
     axios
-      .get('https://api.ipgeolocation.io/ipgeo?apiKey=080c67862a9a4f53b31e1a2327d3a248')
+      .get('https://api.ipgeolocation.io/ipgeo?apiKey=4772905d32fb41fcb0d12e8e5c2b6b76')
       .then(response => {
         this.setState(() => ({
           zip: response.data.zipcode,
