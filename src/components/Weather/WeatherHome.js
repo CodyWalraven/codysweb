@@ -7,13 +7,12 @@ import warm from '../../assets/warm.jpg'
 
 const BackgroundDiv = styled.div`
   overflow: none;
-  max-height: 88vh;
   max-width: 100vw;
 `
 
 const ColdBackgroundDiv = styled.div`
   width: 100vw;
-  height: 88vh;
+  height: 91.5vh;
   padding: 30px;
   background-color: #e2e1e0;
   background-image: url(${cold});

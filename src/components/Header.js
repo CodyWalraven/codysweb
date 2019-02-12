@@ -13,7 +13,7 @@ const StyledH2 = styled.h2`
 const StyledHeaderDiv = styled.div`
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: invert(70%);
-  padding: 30px 80px;
+  padding: 15px 80px;
   width: 100vw;
   text-align: left;
   color: white;

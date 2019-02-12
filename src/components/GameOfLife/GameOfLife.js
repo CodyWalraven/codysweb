@@ -22,8 +22,8 @@ const StyledControlDiv = styled.div`
 const StyledButton = styled.button`
   color: white;
   background: #ff9684;
-  padding: 5px 20px;
-  font-size: 24px;
+  padding: 5px 10px;
+  font-size: 18px;
   margin: 5px;
   border: none;
   outline: none;
@@ -44,10 +44,10 @@ const StyledButton = styled.button`
 `
 
 const LoadDiv = styled.div`
-  width: 300px;
-  height: 300px;
+  width: 16vw;
+  height: 200px;
   position: absolute;
-  right: 8vw;
+  right: 2rem;
   top: 30vh;
   display: flex;
   background-color: #adcbff;

@@ -10,10 +10,11 @@ html {
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 1.6rem; // background-color: rgb(28, 74, 117);
+  font-size: 1.6rem; 
   background-color: var(--main-bg-color);
   overflow-x: hidden;
   --main-bg-color: #40758e; 
+  --main-bg-color: #529ab0; 
 }
 
 button {
