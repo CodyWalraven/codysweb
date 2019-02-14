@@ -14,10 +14,14 @@ body {
   background-color: var(--main-bg-color);
   overflow-x: hidden;
   --main-bg-color: #40758e; 
-  --main-bg-color: #529ab0; 
+  --main-bg-color: #105870; 
 }
 
 button {
+  cursor: pointer;
+}
+
+img {
   cursor: pointer;
 }
 

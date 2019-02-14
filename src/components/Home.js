@@ -3,6 +3,7 @@ import Header from './Header'
 import styled from 'styled-components'
 import { NavLink } from 'react-router-dom'
 import TextSwap from './TextLoop.js'
+import scrollDown from '../assets/down.gif'
 
 const StyledH1 = styled.h1`
   font-size: 46px;
@@ -76,6 +77,20 @@ const NewStyledButton = styled.button`
   }
 `
 
+const StyledDownArrow = styled.img`
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30%;
+
+`
+
+const scrollDownWindow = () => {
+  window.scrollTo(0, 400)
+}
+
 const Home = () => (
   <div>
     <div className="cd-fixed-bg cd-fixed-bg--1">
@@ -83,6 +98,7 @@ const Home = () => (
       <StyledH1>
         Cody Walraven is building <TextSwap /> websites.
       </StyledH1>
+      <StyledDownArrow src={scrollDown} onClick={scrollDownWindow} />
     </div>
     <div className="cd-scrolling-bg cd-scrolling-bg--color-1">
       <div className="cd-scrolling-bg__content">
