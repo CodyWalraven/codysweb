@@ -8,9 +8,12 @@ import scrollDown from '../assets/down.gif'
 const StyledH1 = styled.h1`
   font-size: 46px;
   position: relative;
-  top: 10rem;
+  top: 7vh;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   color: white;
+  max-width: 85vw;
 `
 
 const ProjectHeader = styled.h1`
