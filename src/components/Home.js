@@ -129,9 +129,7 @@ const Home = () => (
           <p>
             Conway's game of life is one of the earliest examples of artificial life simulated by a
             computer, it is governed by simple rules that result
-            in complex and organic shapes evolving as time passes. This implementation
-            has added the ability to load in some famous patterns and implements all new styling to
-            the design.
+            in complex and organic shapes evolving as time passes.
           </p>
           <br />
           <NavLink to="gamehomescreen">
@@ -151,7 +149,7 @@ const Home = () => (
             you to enter multiple choices and have a computer select one for you. This project is
             one I built following the the wonderful react tutorial by Andrew Mead.
           </p>
-          <br />
+
           <NavLink to="indecision">
             <NewStyledButton>Indecision App</NewStyledButton>
           </NavLink>

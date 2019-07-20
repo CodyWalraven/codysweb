@@ -92,7 +92,7 @@ export default class WeatherHome extends React.Component {
   getWeather = (zip, country) => {
     axios
       .get(
-        `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&units=imperial&APPID=6d9a703f94f2006001b7094d1241d1e6`
+        `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&units=imperial&APPID=4c1b9c660ea7b80d1cad1c2bd425e72d`
       )
       .then(response => {
         this.setState(() => ({
@@ -106,7 +106,7 @@ export default class WeatherHome extends React.Component {
 
   geoLocateThenGetWeather = () => {
     axios
-      .get('https://api.ipgeolocation.io/ipgeo?apiKey=4772905d32fb41fcb0d12e8e5c2b6b76')
+      .get('https://api.ipgeolocation.io/ipgeo?apiKey=94de7ac8ee8f4e058289b2f75be065a1')
       .then(response => {
         this.setState(() => ({
           zip: response.data.zipcode,
