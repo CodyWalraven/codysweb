@@ -90,6 +90,13 @@ export default class WeatherHome extends React.Component {
   }
 
   getWeather = (zip, country) => {
+    if (zip === 75072){
+      zip = 75071
+    }
+
+    if (zip === 75035){
+      zip = 75034
+    }
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/weather?zip=${zip},${country}&units=imperial&APPID=4c1b9c660ea7b80d1cad1c2bd425e72d`
@@ -115,6 +122,7 @@ export default class WeatherHome extends React.Component {
         }))
       })
       .then(() => {
+        console.log(`zip: ${this.state.zip} and state: us`)
         this.getWeather(this.state.zip, 'us')
       })
   }
