@@ -90,12 +90,8 @@ export default class WeatherHome extends React.Component {
   }
 
   getWeather = (zip, country) => {
-    if (zip === 75072){
-      zip = 75071
-    }
-
-    if (zip === 75035){
-      zip = 75034
+    if (zip === "75072"){
+      zip = "75071"
     }
     axios
       .get(
@@ -122,7 +118,6 @@ export default class WeatherHome extends React.Component {
         }))
       })
       .then(() => {
-        console.log(`zip: ${this.state.zip} and state: us`)
         this.getWeather(this.state.zip, 'us')
       })
   }
