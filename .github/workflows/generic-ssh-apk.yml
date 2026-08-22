@@ -1,8 +1,8 @@
 name: Generic SSH APK
 on:
-  push:
-    branches: [chatgpt/generic-ssh-apk-builder]
-    paths: ['apk-builder/**']
+  pull_request:
+    branches: [master]
+    paths: ['apk-builder/**', '.github/workflows/generic-ssh-apk.yml']
 jobs:
   build:
     runs-on: ubuntu-latest
